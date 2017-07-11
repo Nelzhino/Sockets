@@ -17,9 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
-import co.com.socket.dto.TramaDto;
-
+import co.com.socket.dto.TramaDto;;
 /**
  * @author Usuario
  *
@@ -61,7 +59,7 @@ public class LaminaMarcoCliente extends JPanel implements Runnable {
 			}
 
 			private void EnvioTrama() throws UnknownHostException, IOException {
-				Socket socket = new Socket("10.10.20.135", 9999);
+				Socket socket = new Socket("10.10.20.135", 9090);
 				// DataOutputStream flujoSalida = new
 				// DataOutputStream(socket.getOutputStream());
 				// flujoSalida.writeUTF(campo1.getText());
@@ -87,6 +85,7 @@ public class LaminaMarcoCliente extends JPanel implements Runnable {
 	public void run() {
 		// TODO Auto-generated method stub
 		try {
+			@SuppressWarnings("resource")
 			ServerSocket servidorCliente = new ServerSocket(9090);
 			Socket cliente;
 			TramaDto tramaRecibido;

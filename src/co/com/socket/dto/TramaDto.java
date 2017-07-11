@@ -46,8 +46,4 @@ public class TramaDto implements Serializable{
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
 	}
-	
-	
-	
-
 }

@@ -51,7 +51,7 @@ public class MarcoServidor extends JFrame implements Runnable {
 		try {
 
 			@SuppressWarnings("resource")
-			ServerSocket server = new ServerSocket(9999);
+			ServerSocket server = new ServerSocket(9090);
 
 			// Se queda escuchando cuando le digo que debe recibir algun
 			// mensaje.
@@ -81,6 +81,7 @@ public class MarcoServidor extends JFrame implements Runnable {
 		Socket envioDestinatario = new Socket(ip, 9090);		
 		ObjectOutputStream paqueteReenvio = new ObjectOutputStream(envioDestinatario.getOutputStream());
 		paqueteReenvio.writeObject(paqueteRecibido);
+		paqueteReenvio.close();
 		envioDestinatario.close();
 	}
 }
