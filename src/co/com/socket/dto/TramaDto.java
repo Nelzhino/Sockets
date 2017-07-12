@@ -1,6 +1,9 @@
 package co.com.socket.dto;
 
 import java.io.Serializable;
+import java.util.List;
+
+import co.com.socket.enums.EstadoEnum;
 
 public class TramaDto implements Serializable{
 	/**
@@ -10,17 +13,8 @@ public class TramaDto implements Serializable{
 	private String ip;
 	private String nick;
 	private String mensaje;
-	
-	
-	
-	
-	public TramaDto(String ip, String nick, String mensaje) {
-		super();
-		this.ip = ip;
-		this.nick = nick;
-		this.mensaje = mensaje;
-	}
-
+	private EstadoEnum estado;
+	private List<String> ipRemotas;
 
 	public TramaDto() {
 		super();
@@ -45,5 +39,23 @@ public class TramaDto implements Serializable{
 	}
 	public void setMensaje(String mensaje) {
 		this.mensaje = mensaje;
+	}
+
+	public EstadoEnum getEstado() {
+		return estado;
+	}
+
+	public void setEstado(EstadoEnum estado) {
+		this.estado = estado;
+	}
+
+
+	public List<String> getIpRemotas() {
+		return ipRemotas;
+	}
+
+
+	public void setIpRemotas(List<String> ipRemotas) {
+		this.ipRemotas = ipRemotas;
 	}
 }

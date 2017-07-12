@@ -4,6 +4,7 @@
 package co.com.socket.frame.client;
 
 import javax.swing.JFrame;
+import co.com.socket.actions.EnvioOnline;
 
 /**
  * @author Usuario
@@ -17,14 +18,11 @@ public class MarcoCliente extends JFrame {
 	private static final long serialVersionUID = -1551799969218169973L;
 
 	public MarcoCliente() {
-
 		setBounds(600, 300, 280, 350);
-
 		LaminaMarcoCliente milamina = new LaminaMarcoCliente();
-
 		add(milamina);
-
 		setVisible(true);
+		addWindowListener(new EnvioOnline());
 	}
 
 }
